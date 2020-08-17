@@ -39,11 +39,11 @@ module.exports = {
                 var resource = 'arn:aws:ec2:' + region + ':' + sg.OwnerId + ':security-group/'+ sg.GroupId ;
                 if (sg.GroupName.toLowerCase().startsWith('launch-wizard')) {
                     helpers.addResult(results, 2,
-                        `${sg.GroupName} - FAIL`,
+                        `${sg.GroupName} was created using the LaunchWizard`,
                         region, resource);
                 }else {
                     helpers.addResult(results, 0,
-                        `${sg.GroupName} - PASS`,
+                        `${sg.GroupName} was not created using the LaunchWizard`,
                         region, resource);
                 }
             }
